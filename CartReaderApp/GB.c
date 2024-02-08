@@ -221,6 +221,9 @@ void getCartInfo_GB()
     case 0x07:
       romBanks = 256;
       break;
+    case 0x08:
+      romBanks = 512;
+      break;
     default:
       romBanks = 2;
   }
@@ -904,7 +907,7 @@ void writeFlash29F_GB(byte MBC, boolean flashErase) {
     f_lseek(&tf,0);
 
     // ROM banks
-    if(romSize < 8)
+    if(romSize < 9)
       romBanks = 1 << (romSize + 1);
     else 
       romBanks = 2;
@@ -1364,7 +1367,7 @@ bool writeCFI_GB() {
     f_lseek(&tf,0);
 
     // ROM banks
-    if(romSize < 8)
+    if(romSize < 9)
       romBanks = 1 << (romSize + 1);
     else 
       romBanks = 2;
