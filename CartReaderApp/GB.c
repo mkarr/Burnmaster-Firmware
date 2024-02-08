@@ -344,6 +344,10 @@ void showCartInfo_GB()
       case 7:
         tinfo = "4MB";
         break;
+
+      case 8:
+        tinfo = "8MB";
+        break;
     }
 
     OledShowString(65,3,tinfo,8);
